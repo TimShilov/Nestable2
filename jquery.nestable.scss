@@ -49,16 +49,16 @@ $nestable-empty-class: dd-empty;
   margin: 5px 0;
   padding: 5px 10px;
   color: #333;
+  cursor: move;
   text-decoration: none;
-  font-weight: bold;
   border: 1px solid #ccc;
   background: #fafafa;
   border-radius: 3px;
   box-sizing: border-box;
 
   &:hover {
-    color: #2ea8e5;
-    background: #fff;
+    border-color:#ccc !important;
+    background:#f0f0f0;
   }
 }
 
@@ -120,17 +120,24 @@ $nestable-empty-class: dd-empty;
 }
 
 .#{$nestable-empty-class} {
+  display: flex;
+	align-items: center;
+	justify-content: center;
   border: 1px dashed #bbb;
   min-height: 100px;
-  background-color: #e5e5e5;
+  background-color: #fff;
   background-size: 60px 60px;
   background-position: 0 0, 30px 30px;
+
+  &:before {
+    content: "Drag items here...";
+  }
 }
 
 .#{$nestable-drag-class} {
   position: absolute;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 99999;
 
   &> .#{$nestable-item-class} .#{$nestable-handle-class} {
     margin-top: 0;

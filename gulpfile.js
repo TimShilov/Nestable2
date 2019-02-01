@@ -37,5 +37,11 @@ gulp.task('test', function () {
         .pipe(eslint.failAfterError());
 });
 
+// move-sources
+gulp.task('move-sources', function () {
+    gulp.src([file + '.css', file + '.js'])
+        .pipe(gulp.dest('dist/'));
+});
+
 // build assets
-gulp.task('default', ['js', 'css']);
+gulp.task('default', ['js', 'css', 'move-sources']);
